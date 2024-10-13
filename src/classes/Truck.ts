@@ -31,7 +31,7 @@ class Truck extends Vehicle implements AbleToTow  {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[],
+    wheels: Wheel[] = [],
     towingCapacity: number,
 
   ) {
@@ -58,11 +58,11 @@ class Truck extends Vehicle implements AbleToTow  {
     // TODO: Get the make an model of the vehicle if it exists
     
     tow(vehicle: Truck | Motorbike | Car): void {
-     const vehicleMake = this.make || 'Unknown make';
-     const vehicleModel = this.model || 'Unknown make';
+     const vehicleMake = vehicle.make || 'Unknown make';
+     const vehicleModel =vehicle.model || 'Unknown make';
 
        // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
-     if (this.weight <= this.towingCapacity) {
+     if (vehicle.weight <= this.towingCapacity) {
        // TODO: If it is, log that the vehicle is being towed
       console.log(`${vehicleMake} ${vehicleModel} is being towed.`)
      } else {

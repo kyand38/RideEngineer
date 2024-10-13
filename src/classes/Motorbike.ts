@@ -24,7 +24,7 @@ class Motorbike extends Vehicle {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[],
+    wheels: Wheel[] = []
   ) {
     // TODO: The constructor should call the constructor of the parent class, Vehicle
     super();
@@ -36,10 +36,11 @@ class Motorbike extends Vehicle {
     this.year = year;
     this.weight = weight;
     this.topSpeed = topSpeed;
-    this.wheels = wheels;
+    //this.wheels = wheels;
+  
     // TODO: The constructor should check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
 
-    if (wheels.length !== 2) {
+     if (wheels.length !== 2) {
       this.wheels = [new Wheel(), new Wheel(),];
     } else {
       this.wheels = wheels;
@@ -47,14 +48,11 @@ class Motorbike extends Vehicle {
   }
   // TODO: Implement the wheelie method
   // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
-  wheelie(vehicle: Motorbike): void {
+  wheelie(): void {
     const vehicleMake = this.make || 'Unknown make';
-    const vehicleModel = this.model || 'Unknown make';
-    if (vehicle.wheels <= this.wheels) {
+    const vehicleModel = this.model || 'Unknown make'; {
       console.log(`Motorbike ${vehicleMake} ${vehicleModel} is doing a wheelie!`)
-    } else {
-      console.log(`Only Motorikes can do wheelies.`)
-    }
+    } 
   }
   // TODO: Override the printDetails method from the Vehicle class
   override printDetails(): void {
