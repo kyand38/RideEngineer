@@ -73,6 +73,13 @@ class Vehicle implements Driveable {
       console.log('Start the vehicle first');
     }
   }
+  wheelie(): void {
+    if (this.started) {
+      console.log('Popped a wheelie!');
+    } else {
+      console.log('Only a motorBike can pop a wheelie.');
+    }
+  }
 }
 
 // Export the Vehicle class
