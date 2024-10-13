@@ -47,11 +47,32 @@ import Wheel from './Wheel.js';
     }
     // TODO: Implement the wheelie method
     // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
-
+    wheelie(): void {
+     const vehicleMake = vehicle.make || 'Unknown make';
+     const vehicleModel = vehicle.model || 'Unknown make'; 
+     if (vehicle.wheels <= this.wheels){
+      console.log(`Motorbike ${vehicleMake} ${vehicleModel} is doing a wheelie!`)
+     }else {
+      console.log(`Only Motorikes can do wheelies.`)
+     }
+    }
     // TODO: Override the printDetails method from the Vehicle class
-   // TODO: The method should call the printDetails method of the parent class
-   // TODO: The method should log the details of the Motorbike
-   // TODO: The details should include the VIN, make, model, year, weight, top speed, color, and wheels
+    override printDetails(): void {
+      // TODO: The method should call the printDetails method of the parent class
+      super.printDetails();
+      // TODO: The method should log the details of the Motorbike
+      // TODO: The details should include the VIN, make, model, year, weight, top speed, color, and wheels
+      console.log(`VIN: ${this.vin}`);
+      console.log(`Make: ${this.make}`);
+      console.log(`Model: ${this.model}`);
+      console.log(`Year: ${this.year}`);
+      console.log(`Weight: ${this.weight} lbs`);
+      console.log(`Top Speed: ${this.topSpeed} mph`);
+      console.log(`Color: ${this.color}`);
+      console.log(`Wheels: ${this.wheels}`);
+
+
+    }
   }
 
 // Export the Motorbike class as the default export
