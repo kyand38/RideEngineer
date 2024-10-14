@@ -293,13 +293,14 @@ class Cli {
         },
       ])
       .then((answers) => {
-        // TODO: check if the selected vehicle is the truck
+        //  check if the selected vehicle is the truck'
+        // I had chatGPT walk me through this one. In the future to point out when I needed that help I'll use '// /!/'
         if (answers.findVehicleToTow === truck){
           console.log('The truck cannot tow itself.');
           this.performActions();
-          // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
+          // if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
         }else {
-          // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
+          // if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
           truck.tow(answers.findVehicleToTow);
           this.performActions();
         }
@@ -390,7 +391,7 @@ class Cli {
             }
           }
         }
-        // TODO: add statements to perform the tow action only if the selected vehicle is a truck.
+        // perform the tow action only if the selected vehicle is a truck./!//
         else if (answers.action === 'tow') {
           for (let i = 0; i < this.vehicles.length; i++) {
             if (this.vehicles[i].vin === this.selectedVehicleVin){
