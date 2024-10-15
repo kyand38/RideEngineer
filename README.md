@@ -24,6 +24,7 @@
 2. Choose whether to create a new vehicle or select an existing one.
 3. For new vehicles, follow the prompts to enter details such as color, make, model, year, and specific properties (e.g., towing capacity for trucks).
 4. Once a vehicle is selected, choose actions like starting, accelerating, turning, or towing (for trucks).
+5. Follow the link for a short demonstration.  [Demo](https://drive.google.com/file/d/16kKZAIIUIUNkQzF40f_74kM5cuYek7_V/view)
 
 
 ## Credits:
@@ -31,7 +32,7 @@
 
 
 ## License:
-This application is covered under the following license: [MIT License](https://www.gnu.org/licenses/gpl-3.0)
+This application is covered under the following license:  [MIT License](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Features
  - Create cars, trucks, and motorbikes  
