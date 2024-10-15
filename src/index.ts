@@ -27,7 +27,7 @@ const car1 = new Car(
  const motorbike1Wheels = [new Wheel(17, "Michelin"), new Wheel(17, "Michelin")];
  const motorbike1 = new Motorbike(Cli.generateVin(), "black", "Harley Davidson", "Sportster", 2021, 500, 125, motorbike1Wheels);
 
- push vehicles to array
+// push vehicles to rray
 // TODO: uncomment once trucks are implemented
 vehicles.push(truck1);
 vehicles.push(car1);

@@ -294,14 +294,16 @@ class Cli {
       ])
       .then((answers) => {
         //  check if the selected vehicle is the truck'
-        // I had chatGPT walk me through this one. In the future to point out when I needed that help I'll use '// /!/'
-        if (answers.findVehicleToTow === truck){
+        this.selectedVehicleVin
+        answers.vehicleToTow.vin
+
+        if (answers.vehicleToTow.vin === this.selectedVehicleVin){
+          // if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
           console.log('The truck cannot tow itself.');
           this.performActions();
-          // if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
         }else {
           // if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
-          truck.tow(answers.findVehicleToTow);
+          truck.tow(answers.vehicleToTow);
           this.performActions();
         }
       });
@@ -407,12 +409,17 @@ class Cli {
                 }
               }      
             }    
+            // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
+
+            
             else if (answers.action === 'wheelie') {
               for (let i = 0; i < this.vehicles.length; i++) {
                 if (this.vehicles[i].vin === this.selectedVehicleVin){
                   if (this.vehicles[i] instanceof Motorbike) {
                     const selectedMotorbike = this.vehicles[i] as Motorbike; //Type casting
                       selectedMotorbike.wheelie();
+                      }else {
+                        console.log('Only motorbikes can perform the wheelie action.')
                       }
                     }
                   }      
@@ -420,7 +427,6 @@ class Cli {
             
             
             
-           // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
         else if (answers.action === 'Select or create another vehicle') {
           // start the cli to return to the initial prompt if the user wants to select or create another vehicle
           this.startCli();

@@ -27,7 +27,7 @@
 
 
 ## Credits:
-Assistance with coding ideas provided by ChatGPT.
+ - assistance with a few coding problems provided by ChatGPT.
 
 
 ## License:

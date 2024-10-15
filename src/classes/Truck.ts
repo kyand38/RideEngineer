@@ -31,7 +31,7 @@ class Truck extends Vehicle implements AbleToTow  {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[] = [],
+    wheels: Wheel[],
     towingCapacity: number,
 
   ) {
@@ -55,14 +55,14 @@ class Truck extends Vehicle implements AbleToTow  {
     }
    }
     // TODO: Implement the tow method from the AbleToTow interface
-    // TODO: Get the make an model of the vehicle if it exists
+    // TODO: Get the make and model of the vehicle if it exists
     
     tow(vehicle: Truck | Motorbike | Car): void {
      const vehicleMake = vehicle.make || 'Unknown make';
-     const vehicleModel =vehicle.model || 'Unknown make';
-
+     const vehicleModel = vehicle.model || 'Unknown make';
+     const vehicleWeight = vehicle.weight || 0;
        // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
-     if (vehicle.weight <= this.towingCapacity) {
+     if (vehicleWeight <= this.towingCapacity) {
        // TODO: If it is, log that the vehicle is being towed
       console.log(`${vehicleMake} ${vehicleModel} is being towed.`)
      } else {
@@ -85,9 +85,20 @@ class Truck extends Vehicle implements AbleToTow  {
       console.log(`Top Speed: ${this.topSpeed} mph`);
       console.log(`Color: ${this.color}`);
       console.log(`Towing Capacity: ${this.towingCapacity}`);
-      console.log(`Wheels: ${this.wheels}`);
+      //console.log(`Wheels: ${this.wheels}`);
 
-
+      console.log(
+        `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
+      );
+      console.log(
+        `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
+      );
+      console.log(
+        `Wheel 3: ${this.wheels[2].getDiameter} inch with a ${this.wheels[2].getTireBrand} tire`
+      );
+      console.log(
+        `Wheel 4: ${this.wheels[3].getDiameter} inch with a ${this.wheels[3].getTireBrand} tire`
+      );
     }
     // TODO: The details should include the VIN, make, model, year, weight, top speed, color, towing capacity, and wheels
   }
